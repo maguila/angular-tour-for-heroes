@@ -22,7 +22,7 @@ export class HeroDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    console.log("HeroDetailComponent ngOnInit ...");
+    console.log("HeroDetailComponent ngOnInit ..." + this.hero);
     this.getHero();
   }
 
