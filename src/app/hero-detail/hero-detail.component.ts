@@ -22,16 +22,19 @@ export class HeroDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    console.log("HeroDetailComponent ngOnInit ..." + this.hero);
+    console.log("[hero-ddetail-conponent] ngOnInit ...");
     this.getHero();
+    console.log("[hero-ddetail-conponent] [ngOnInit] hero="+ this.hero);
   }
 
   getHero(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.heroService.getHero(id).subscribe(hero => this.hero = hero);
+    console.log("[hero-ddetail-conponent] id==="+id);
+    var retorno = this.heroService.getHero(id).subscribe(hero => this.hero = hero);
+    console.log(retorno);    
   }
 
-  goBack(): void {
+  goBack(): void { 
     this.location.back();
   }
 
